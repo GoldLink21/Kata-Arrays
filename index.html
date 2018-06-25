@@ -7,51 +7,6 @@
     <title>Array Katas</title>
 </head>
 <body>
-    <script>
-        const gotCitiesCSV = "King's Landing,Braavos,Volantis,Old Valyria,Free Cities,Qarth,Meereen";    
-        const lotrCitiesArray = ["Mordor","Gondor","Rohan","Beleriand","Mirkwood","Dead Marshes","Rhun","Harad"];
-        const bestThing = "The best thing about a boolean is even if you are wrong you are only off by a bit"
-        
-        document.write('GOT Cities<br>');
-        document.write(JSON.stringify(gotCitiesCSV));
-        document.write('<br><br>Words from bestThing<br>');
-        var things = bestThing.slice(' ');
-        document.write(JSON.stringify(things));
-        document.write('<br><br>GOT seperated by semicolons<br>');
-        var semi = gotCitiesCSV.split(',');
-        document.write(JSON.stringify(semi.join(';')));
-        document.write('<br><br>CSV of LOTR<br>');
-        document.write(lotrCitiesArray.join(','));
-        document.write('<br><br>Last 5 of LOTR<br>');
-        var l = lotrCitiesArray.length;
-        for(var i = l-5;i<l;i++){
-            if(i!=l-1)
-                document.write(lotrCitiesArray[i]+', ');
-            else
-                document.write(lotrCitiesArray[i]);
-        }
-        document.write('<br><br>LOTR without Rohan<br>');
-        var lotr = ["Mordor","Gondor","Rohan","Beleriand","Mirkwood","Dead Marshes","Rhun","Harad"];
-        var woRohan=lotr.splice(0,2).concat(lotr.splice(1,5));
-        document.write(JSON.stringify(woRohan));
-        document.write('<br><br>23-38 of bestThing<br>');
-        var temp = bestThing;
-        document.write(temp.slice(23,38));
-        document.write('<br><br>Index of only<br>');
-        document.write(bestThing.indexOf('only'));
-        document.write('<br><br>Double Vowels<br>');
-        var doubleVow=[];
-        for(var i=0;i<semi.length;i++){
-            if(semi[i].indexOf('aa')!=-1||semi[i].indexOf('ee')!=-1||semi[i].indexOf('ii')!=-1||semi[i].indexOf('oo')!=-1||semi[i].indexOf('uu')!=-1){
-                doubleVow.push(semi[i]);
-            }
-        }
-        document.write(JSON.stringify(doubleVow));
-        document.write('<br><br>LOTR Sorted<br>');
-        var sorted = lotrCitiesArray.sort(function(a,b){
-            return a.length-b.length;
-        })
-        document.write(JSON.stringify(sorted));
-    </script>
+    <script src='index.js'></script>
 </body>
 </html>
