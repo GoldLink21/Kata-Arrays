@@ -3,21 +3,23 @@ const lotrCitiesArray = ["Mordor","Gondor","Rohan","Beleriand","Mirkwood","Dead 
 const bestThing = "The best thing about a boolean is even if you are wrong you are only off by a bit";
 
 function text(title,text){
-    var p = document.createElement('p');
+    var p = document.createElement(p);
     p.innerHTML = '<strong>'+title+'</strong><br>'+text;
     document.body.appendChild(p);
 }
 
-text('GOT Cities',JSON.stringify(gotCitiesCSV));
+var semi = gotCitiesCSV.split(',');
+text('GOT Cities',JSON.stringify(semi));
 
 var things = bestThing.slice(' ');
 text('Words from bestThing',JSON.stringify(things));
 
-var semi = gotCitiesCSV.split(',');
 text('GOT seperated by semicolons',JSON.stringify(semi.join(';')));
 
 text('CSV of LOTR',lotrCitiesArray.join(','));
 
+var lotr = ["Mordor","Gondor","Rohan","Beleriand","Mirkwood","Dead Marshes","Rhun","Harad"];
+lotr.splice()
 var l = lotrCitiesArray.length;
 var str = '';
 for(var i = l-5;i<l;i++){
@@ -28,7 +30,7 @@ for(var i = l-5;i<l;i++){
 }
 text('Last 5 of LOTR',str);
 
-var lotr = ["Mordor","Gondor","Rohan","Beleriand","Mirkwood","Dead Marshes","Rhun","Harad"];
+lotr = ["Mordor","Gondor","Rohan","Beleriand","Mirkwood","Dead Marshes","Rhun","Harad"];
 var woRohan=lotr.splice(0,2).concat(lotr.splice(1,5));
 text('LOTR without Rohan',JSON.stringify(woRohan));
 
@@ -39,10 +41,11 @@ text('Index of only',bestThing.indexOf('only'));
 
 var doubleVow=[];
 for(var i=0;i<semi.length;i++){
-    if(semi[i].indexOf('aa')!=-1||semi[i].indexOf('ee')!=-1||semi[i].indexOf('ii')!=-1||semi[i].indexOf('oo')!=-1||semi[i].indexOf('uu')!=-1){
+    if(semi[i].includes('aa')||semi[i].includes('ee')||semi[i].includes('ii')||semi[i].includes('oo')||semi[i].includes('uu')){
         doubleVow.push(semi[i]);
     }
 }
+
 text('Double Vowels',JSON.stringify(doubleVow));
 
 var sorted = lotrCitiesArray.sort(function(a,b){
